@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 18:39:05 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/24 18:33:34 by rpimente         ###   ########.fr       */
+/*   Created: 2020/01/24 19:42:05 by rpimente          #+#    #+#             */
+/*   Updated: 2020/01/24 19:42:38 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
+	unsigned	int	i;
+
+	i = 0;
+	if (n == 0)
+		return (0);
+	while ((i < n - 1) && (s1[i]) && (s2[i]) && (s1[i] == s2[i]))
+		i++;
+	if (s1[i] != s2[i])
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	return (0);
 }

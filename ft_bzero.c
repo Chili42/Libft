@@ -6,9 +6,11 @@
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 19:22:00 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/23 19:36:51 by rpimente         ###   ########.fr       */
+/*   Updated: 2020/01/24 18:31:53 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

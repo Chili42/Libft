@@ -5,10 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 18:30:12 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/22 18:31:24 by rpimente         ###   ########.fr       */
+/*   Created: 2020/01/24 19:42:23 by rpimente          #+#    #+#             */
+/*   Updated: 2020/01/24 19:42:38 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+#include "libft.h"
 
 int ft_tolower(int c)
 	

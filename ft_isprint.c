@@ -6,9 +6,11 @@
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 18:38:09 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/22 18:38:27 by rpimente         ###   ########.fr       */
+/*   Updated: 2020/01/24 18:33:34 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_isprint(int c)
 {
