@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 19:41:16 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/24 20:08:32 by rpimente         ###   ########.fr       */
+/*   Created: 2020/01/27 19:02:16 by rpimente          #+#    #+#             */
+/*   Updated: 2020/01/27 19:03:06 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	char			*n_dst;
-	const	char	*n_src;
+	size_t	i;
+	char	*sub_s;
 
 	i = 0;
-	n_dst = dst;
-	n_src = src;
-	if (n_dst > n_src)
+	if (!(sub_s = (char *)ft_calloc((len + 1), sizeof(char))))
+		return (NULL);
+	if (start > (unsigned int)ft_strlen(s))
+		return (sub_s);
+	sub_s[len] = '\0';
+	while (i < len)
 	{
-		i = n;
-		while (i > 0)
-		{
-			n_dst[i - 1] = n_src[i - 1];
-			i--;
-		}
+		sub_s[i] = ((char *)s)[start];
+		i++;
+		start++;
 	}
-	else
-	{
-		while (i < n)
-		{
-			n_dst[i] = n_src[i];
-			i++;
-		}
-	}
-	return (dst);
+	return (sub_s);
 }

@@ -6,26 +6,35 @@
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 17:29:38 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/24 19:43:39 by rpimente         ###   ########.fr       */
+/*   Updated: 2020/01/27 21:00:33 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *destino, const char *fonte, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	j;
+	size_t lens;
+	size_t i;
 
 	i = 0;
-	j = 0;
-	while (destino[i])
-		i++;
-	while (fonte[j] && i + j < size)
+	lens = ft_strlen(src);
+	if (!size)
+		return (lens);
+	while (*dest && size)
 	{
-		destino[i + j] = fonte[i];
+		dest++;
 		i++;
+		size--;
 	}
-	return (i + j);
+	while (*src && size > 1)
+	{
+		*dest++ = *src++;
+		size--;
+	}
+	if (size != 0)
+	{
+		*dest = '\0';
+	}
+	return (lens + i);
 }
-// strlcat concatena a segunda string (fonte) no final da primeira (destino)

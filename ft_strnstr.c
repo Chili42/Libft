@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 19:41:16 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/24 20:08:32 by rpimente         ###   ########.fr       */
+/*   Created: 2020/01/27 19:57:08 by rpimente          #+#    #+#             */
+/*   Updated: 2020/01/27 19:57:38 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+char			*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	size_t			i;
-	char			*n_dst;
-	const	char	*n_src;
+	size_t	i[4];
 
-	i = 0;
-	n_dst = dst;
-	n_src = src;
-	if (n_dst > n_src)
+	i[0] = 0;
+	i[3] = ft_strlen(s2);
+	if (i[3] == 0)
+		return ((char *)&s1[i[0]]);
+	while (i[0] < len && s1[i[0]])
 	{
-		i = n;
-		while (i > 0)
+		i[1] = 0;
+		if (s1[i[0]] == s2[i[1]])
 		{
-			n_dst[i - 1] = n_src[i - 1];
-			i--;
+			i[2] = i[0] + 1;
+			i[1]++;
+			while (i[2] < len && s1[i[2]] && s2[i[1]] && s1[i[2]] == s2[i[1]])
+			{
+				i[1]++;
+				i[2]++;
+			}
+			if (i[1] == i[3])
+				return ((char *)&s1[i[0]]);
 		}
+		i[0]++;
 	}
-	else
-	{
-		while (i < n)
-		{
-			n_dst[i] = n_src[i];
-			i++;
-		}
-	}
-	return (dst);
+	return (NULL);
 }

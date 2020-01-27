@@ -6,18 +6,15 @@
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 19:42:23 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/24 19:42:38 by rpimente         ###   ########.fr       */
+/*   Updated: 2020/01/27 21:03:48 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int ft_tolower(int c)
-	
+int		ft_tolower(int c)
 {
-	if ((c >= 'a' && c <= 'z'))
-		return (c + 32);
-	else
-		return (c);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }

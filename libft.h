@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 19:25:48 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/24 19:27:22 by rpimente         ###   ########.fr       */
+/*   Created: 2020/01/24 20:29:10 by rpimente          #+#    #+#             */
+/*   Updated: 2020/01/27 19:11:42 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-/*
-** PART 1
-*/
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strcat(char *dest, const char *src);
 int		ft_atoi(const char *str);

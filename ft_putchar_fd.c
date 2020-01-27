@@ -1,42 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 19:41:16 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/24 20:08:32 by rpimente         ###   ########.fr       */
+/*   Created: 2020/01/27 19:32:35 by rpimente          #+#    #+#             */
+/*   Updated: 2020/01/27 19:05:47 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t			i;
-	char			*n_dst;
-	const	char	*n_src;
-
-	i = 0;
-	n_dst = dst;
-	n_src = src;
-	if (n_dst > n_src)
-	{
-		i = n;
-		while (i > 0)
-		{
-			n_dst[i - 1] = n_src[i - 1];
-			i--;
-		}
-	}
-	else
-	{
-		while (i < n)
-		{
-			n_dst[i] = n_src[i];
-			i++;
-		}
-	}
-	return (dst);
+	write(fd, &c, 1);
 }

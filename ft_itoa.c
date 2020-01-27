@@ -1,42 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 19:41:16 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/24 20:08:32 by rpimente         ###   ########.fr       */
+/*   Created: 2020/01/27 19:14:25 by rpimente          #+#    #+#             */
+/*   Updated: 2020/01/27 19:05:19 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+static	int	ft_numlen(long n)
 {
-	size_t			i;
-	char			*n_dst;
-	const	char	*n_src;
+	int i;
 
 	i = 0;
-	n_dst = dst;
-	n_src = src;
-	if (n_dst > n_src)
+	if (n <= 0)
 	{
-		i = n;
-		while (i > 0)
-		{
-			n_dst[i - 1] = n_src[i - 1];
-			i--;
-		}
+		n *= -1;
+		i++;
 	}
-	else
+	while (n > 0)
 	{
-		while (i < n)
-		{
-			n_dst[i] = n_src[i];
-			i++;
-		}
+		n = n / 10;
+		i++;
 	}
-	return (dst);
+	return (i);
+}
+
+char		*ft_itoa(int n)
+{
+	int		i;
+	int		len;
+	char	*s;
+	long	n_n;
+
+	i = -1;
+	n_n = n;
+	len = ft_numlen(n_n);
+	if (!(s = (char *)ft_calloc(len + 1, sizeof(char))))
+		return (NULL);
+	if (n_n < 0)
+	{
+		s[0] = '-';
+		n_n *= -1;
+		i++;
+	}
+	s[len] = '\0';
+	while (--len > i)
+	{
+		s[len] = (n_n % 10) + 48;
+		n_n /= 10;
+	}
+	return (s);
 }

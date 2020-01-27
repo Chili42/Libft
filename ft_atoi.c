@@ -6,10 +6,9 @@
 /*   By: rpimente <rpimente@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 19:40:28 by rpimente          #+#    #+#             */
-/*   Updated: 2020/01/24 19:42:38 by rpimente         ###   ########.fr       */
+/*   Updated: 2020/01/24 19:01:38 by rpimente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int	ft_atoi(const char *str)
 {
